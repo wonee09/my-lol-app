@@ -1,3 +1,14 @@
+export type ItemData = {
+  id: number;
+  name: string;
+  plaintext: string;
+  image: ItemImage;
+};
+
+export type ItemDataResponse = {
+  data: { [key: string]: Item };
+};
+
 export type Item = {
   name: string;
   description: string;
@@ -10,7 +21,8 @@ export type Item = {
   maps: {
     [key: number]: boolean;
   };
-  stats: Record<string, number>;
+  stats: ItemStats;
+  depth?: number;
 };
 
 export type ItemImage = {
@@ -28,4 +40,13 @@ export type ItemGold = {
   purchasable: boolean;
   total: number;
   sell: number;
+};
+
+export type ItemStats = {
+  FlatSpellBlockMod?: number;
+  FlatHPPoolMod?: number;
+  FlatArmorMod?: number;
+  FlatMagicDamageMod?: number;
+  PercentAttackSpeedMod?: number;
+  PercentMovementSpeedMod?: number;
 };
