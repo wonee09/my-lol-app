@@ -1,6 +1,6 @@
 import { fetchItemList } from "@/utils/serverApi";
 
-function ItemPage() {
+async function ItemPage() {
   fetchItemList();
   return <div></div>;
 }
