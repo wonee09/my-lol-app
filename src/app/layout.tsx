@@ -15,16 +15,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <header>
-        <nav>
-          <Link href={HOME}>홈</Link>
-          <Link href={CHAMPION}>챔피언 목록</Link>
-          <Link href={ITEMLIST}>아이템 목록</Link>
-          <Link href={ROTATION}>챔피언 로테이션</Link>
-        </nav>
-      </header>
-      <body>{children}</body>
-      <footer></footer>
+      <body>
+        <header>
+          <nav>
+            <Link href={HOME}>홈</Link>
+            <Link href={CHAMPION}>챔피언 목록</Link>
+            <Link href={ITEMLIST}>아이템 목록</Link>
+            <Link href={ROTATION}>챔피언 로테이션</Link>
+          </nav>
+        </header>
+        <main>{children}</main>
+        <footer></footer>
+      </body>
     </html>
   );
 }
