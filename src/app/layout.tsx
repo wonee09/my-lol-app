@@ -1,17 +1,7 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
 import "./globals.css";
-
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
+import Link from "next/link";
+import { HOME, CHAMPION, ITEMLIST, ROTATION } from "@/constant/routePath";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -25,11 +15,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
-      </body>
+      <header>
+        <nav>
+          <Link href={HOME}>홈</Link>
+          <Link href={CHAMPION}>챔피언 목록</Link>
+          <Link href={ITEMLIST}>아이템 목록</Link>
+          <Link href={ROTATION}>챔피언 로테이션</Link>
+        </nav>
+      </header>
+      <body>{children}</body>
+      <footer></footer>
     </html>
   );
 }
