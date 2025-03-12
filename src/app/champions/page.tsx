@@ -1,6 +1,7 @@
 import { DDRAGON_URL } from "@/constant/fetchURL";
 import { fetchChampionList, getVersion } from "@/utils/serverApi";
 import Image from "next/image";
+import Link from "next/link";
 
 async function ChampionPage() {
   const championList = await fetchChampionList();
@@ -19,6 +20,7 @@ async function ChampionPage() {
             />
             <div>{champion.name}</div>
             <div>{champion.title}</div>
+            <Link href={`/champions/${champion.id}`}>더보기</Link>
           </div>
         );
       })}

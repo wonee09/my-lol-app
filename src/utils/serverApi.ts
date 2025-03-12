@@ -7,6 +7,7 @@ import {
   DDRAGON_URL,
 } from "@/constant/fetchURL";
 import { Champion, ChampionResponse } from "@/types/Champion";
+import { ChampionDetail } from "@/types/ChampionDetail";
 import { ItemDataResponse, ItemData } from "@/types/Item";
 const ONE_DAY = 60 * 60 * 24;
 
@@ -43,7 +44,6 @@ export const fetchItemList = async () => {
 // 챔피언 목록 불러오기
 export const fetchChampionList = async () => {
   const ver = await getVersion();
-
   const res = await fetch(`${DDRAGON_URL}${ver}${CHAMPIONLIST_URL}`, {
     next: {
       revalidate: ONE_DAY,
@@ -57,7 +57,14 @@ export const fetchChampionList = async () => {
 
 // 챔피언 상세정보 불러오기
 export const fetchChampionDetail = async (id: string) => {
-  const res = await fetch(`${CHAMPION_DETAIL}${id}.json`);
-  const data = await res.json();
+  const ver = await getVersion();
+  const res = await fetch(`${DDRAGON_URL}${ver}${CHAMPION_DETAIL}${id}.json`);
+  // const res = await fetch(
+  //   "https://ddragon.leagueoflegends.com/cdn/15.5.1/data/ko_KR/champion/Aatrox.json"
+  // );
+  const { data } = await res.json();
   // console.log("data", data);
+  const championDetailData: ChampionDetail = data[id];
+  // console.log("championDetailData", championDetailData);
+  return championDetailData;
 };
