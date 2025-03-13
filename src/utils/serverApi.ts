@@ -1,4 +1,5 @@
 "use server";
+
 import {
   API_VERSION_URL,
   CHAMPION_DETAIL,
@@ -20,7 +21,7 @@ export const getVersion = async () => {
 };
 
 // 서버액션 정의
-// 아이템 리스트 불러오기
+// 아이템 리스트 불러오기 SSG
 export const fetchItemList = async () => {
   const ver = await getVersion();
   const res = await fetch(`${DDRAGON_URL}${ver}${ITEMLIST_URL}`, {
@@ -41,7 +42,7 @@ export const fetchItemList = async () => {
   return itemData;
 };
 
-// 챔피언 목록 불러오기
+// 챔피언 목록 불러오기 ISR
 export const fetchChampionList = async () => {
   const ver = await getVersion();
   const res = await fetch(`${DDRAGON_URL}${ver}${CHAMPIONLIST_URL}`, {
@@ -55,13 +56,13 @@ export const fetchChampionList = async () => {
   return championData;
 };
 
-// 챔피언 상세정보 불러오기
+// 챔피언 상세정보 불러오기 SSR
 export const fetchChampionDetail = async (id: string) => {
   const ver = await getVersion();
-  const res = await fetch(`${DDRAGON_URL}${ver}${CHAMPION_DETAIL}${id}.json`);
-  // const res = await fetch(
-  //   "https://ddragon.leagueoflegends.com/cdn/15.5.1/data/ko_KR/champion/Aatrox.json"
-  // );
+  const res = await fetch(`${DDRAGON_URL}${ver}${CHAMPION_DETAIL}${id}.json`, {
+    cache: "no-store",
+  });
+  
   const { data } = await res.json();
   // console.log("data", data);
   const championDetailData: ChampionDetail = data[id];
