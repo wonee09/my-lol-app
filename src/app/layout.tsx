@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Link from "next/link";
 import { HOME, CHAMPION, ITEMLIST, ROTATION } from "@/constant/routePath";
+import Provider from "./provider";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -24,7 +25,9 @@ export default function RootLayout({
             <Link href={ROTATION}>챔피언 로테이션</Link>
           </nav>
         </header>
-        <main>{children}</main>
+        <main>
+          <Provider>{children}</Provider>
+        </main>
         <footer></footer>
       </body>
     </html>
