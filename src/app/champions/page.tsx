@@ -8,22 +8,28 @@ async function ChampionPage() {
   const ver = await getVersion();
 
   return (
-    <div>
-      {championList.map((champion) => {
-        return (
-          <div key={champion.key}>
-            <Image
-              src={`${DDRAGON_URL}${ver}/img/champion/${champion.image.full}`}
-              alt={champion.image.full}
-              width={100}
-              height={100}
-            />
-            <div>{champion.name}</div>
-            <div>{champion.title}</div>
-            <Link href={`/champions/${champion.id}`}>더보기</Link>
-          </div>
-        );
-      })}
+    <div className="mt-12 mb-12">
+      <div className="grid grid-cols-4 gap-4">
+        {championList.map((champion) => {
+          return (
+            <Link href={`/champions/${champion.id}`} key={champion.key}>
+              <div
+                className="flex flex-col items-center justify-start rounded-lg py-2 border-neutral-200 gap-2 border-2 hover:border-primary
+"
+              >
+                <Image
+                  src={`${DDRAGON_URL}${ver}/img/champion/${champion.image.full}`}
+                  alt={champion.image.full}
+                  width={100}
+                  height={100}
+                />
+                <h2 className="text-xl font-bold">{champion.name}</h2>
+                <div>{champion.title}</div>
+              </div>
+            </Link>
+          );
+        })}
+      </div>
     </div>
   );
 }
