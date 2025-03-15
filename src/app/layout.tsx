@@ -3,6 +3,8 @@ import "./globals.css";
 import Link from "next/link";
 import { HOME, CHAMPION, ITEMLIST, ROTATION } from "@/constant/routePath";
 import Provider from "./provider";
+import Image from "next/image";
+import logo from "@public/assets/logo.svg";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,19 +18,31 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
-        <header>
-          <nav>
-            <Link href={HOME}>홈</Link>
-            <Link href={CHAMPION}>챔피언 목록</Link>
-            <Link href={ITEMLIST}>아이템 목록</Link>
-            <Link href={ROTATION}>챔피언 로테이션</Link>
+      <body className="bg-background-light dark:bg-background-dark dark:text-text-dark">
+        <header className="fixed top-0 w-full">
+          <nav className="flex items-center p-8 h-20 box-border bg-neutral-200 dark:bg-neutral-900 dark:text-primary-dark font-semibold">
+            <Link href={HOME}>
+              <Image src={logo} alt="logo" height={50} />
+            </Link>
+            <div className="container mx-auto flex justify-around">
+              <Link href={CHAMPION}>
+                <div className="p-4">챔피언 목록</div>
+              </Link>
+              <Link href={ITEMLIST}>
+                <div className="p-4">아이템 목록</div>
+              </Link>
+              <Link href={ROTATION}>
+                <div className="p-4">챔피언 로테이션</div>
+              </Link>
+            </div>
           </nav>
         </header>
-        <main>
+        <main className="container mx-auto mt-24 mb-24">
           <Provider>{children}</Provider>
         </main>
-        <footer></footer>
+        <footer className="fixed bottom-0 w-full text-center p-8 h-20 box-border items-center bg-neutral-200 dark:bg-neutral-900 dark:text-text-dark">
+          이것이 푸터다
+        </footer>
       </body>
     </html>
   );
