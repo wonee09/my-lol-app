@@ -25,8 +25,8 @@ export default function RootLayout({
   return (
     <html lang="ko" className={myFont.variable}>
       <body className="bg-background-light font-chosun dark:bg-background-dark dark:text-text-dark">
-        <header className="fixed top-0 w-full">
-          <nav className="flex items-center p-8 h-20 box-border bg-neutral-400/[0.8] dark:bg-neutral-900/[0.6] dark:text-primary-dark font-semibold text-lg ">
+        <header className="fixed top-0 w-full z-50">
+          <nav className="flex items-center p-8 h-20 box-border bg-neutral-400/[0.8] dark:bg-neutral-900/[0.6] dark:text-primary-dark font-semibold text-lg z-50">
             <Link href={HOME}>
               <Image src={logo} alt="logo" height={50} />
             </Link>
