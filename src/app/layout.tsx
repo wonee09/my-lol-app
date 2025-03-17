@@ -5,7 +5,7 @@ import { HOME, CHAMPION, ITEMLIST, ROTATION } from "@/constant/routePath";
 import Provider from "./provider";
 import Image from "next/image";
 import logo from "@public/assets/logo.svg";
-import localFont from "@next/font/local";
+import localFont from "next/font/local";
 
 export const metadata: Metadata = {
   title: "My LoL Page",
