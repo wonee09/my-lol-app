@@ -22,6 +22,9 @@ const config: Config = {
           dark: "#e5e7eb", // 다크 모드 텍스트 색상
         },
       },
+      fontFamily: {
+        chosun: ["var(--font-chosun)"],
+      },
     },
   },
   plugins: [],
