@@ -1,7 +1,7 @@
 "use client";
 
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { ReactQueryDevtools } from "../../node_modules/@tanstack/react-query-devtools/src/index";
+import {ReactQueryDevtools} from "@tanstack/react-query-devtools"
 import { RiMoonClearFill, RiSunFill } from "react-icons/ri";
 import modeStore from "@/store/mode";
 import { useEffect } from "react";
@@ -37,7 +37,7 @@ const Provider = ({ children }: { children: React.ReactNode }) => {
       {children}
       <button
         onClick={toggleDarkMode}
-        className="fixed bottom-16 right-16 border p-4 w-18 h-18 bg-neutral-900 dark:bg-white rounded-full text-white dark:text-black font-semibold z-10"
+        className="fixed bottom-16 right-16  p-4 w-18 h-18 bg-neutral-900 dark:bg-white rounded-full text-white dark:text-black font-semibold z-10"
       >
         {darkMode ? <RiSunFill /> : <RiMoonClearFill />}
       </button>
