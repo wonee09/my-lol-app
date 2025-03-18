@@ -7,6 +7,7 @@ import Image from "next/image";
 import logo from "@public/assets/logo.svg";
 import localFont from "next/font/local";
 
+
 export const metadata: Metadata = {
   title: "My LoL Page",
   description: "LoL 데이터를 활용한 정보 사이트",
@@ -24,7 +25,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko" className={myFont.variable}>
-      <body className="bg-background-light font-chosun dark:bg-background-dark dark:text-text-dark">
+      <body className="bg-background-light font-chosun dark:bg-background-dark dark:text-text-dark h-screen">
         <header className="fixed top-0 w-full z-50">
           <nav className="flex items-center p-8 h-20 box-border bg-neutral-400/[0.8] dark:bg-neutral-900/[0.6] dark:text-primary-dark font-semibold text-lg z-50">
             <Link href={HOME}>
@@ -43,7 +44,7 @@ export default function RootLayout({
             </div>
           </nav>
         </header>
-        <main className="container mx-auto my-24">
+        <main className="container mx-auto h-full">
           <Provider>{children}</Provider>
         </main>
         <footer className="fixed bottom-0 w-full text-center p-8 h-20 box-border items-center bg-neutral-400/[0.8] dark:bg-neutral-900/[0.6] dark:text-text-dark">

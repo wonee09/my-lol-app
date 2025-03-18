@@ -1,9 +1,7 @@
 import DetailStatsComp from "@/components/detailStatsComp";
-import Loading from "@/app/loading";
 import { DDRAGON_URL } from "@/constant/fetchURL";
 import { fetchChampionDetail } from "@/utils/serverApi";
 import Image from "next/image";
-import { Suspense } from "react";
 
 type Props = {
   params: {
@@ -11,16 +9,14 @@ type Props = {
   };
 };
 const ChampionDetailPage = async ({ params }: Props) => {
-  // const ver = await getVersion();
   const id = params.id;
   const championData = await fetchChampionDetail(id);
   // console.log("championData", championData);
   return (
-    <div className="flex flex-col gap-2 mx-4">
+    <div className="flex flex-col gap-2 mx-4 py-24">
       <h2 className="text-4xl font-bold">{championData.name}</h2>
       <h3 className="text-xl">{championData.title}</h3>
         <div className="bg-neutral-500 h-96 relative">
-      <Suspense fallback={<Loading />}>
           <Image
             src={`${DDRAGON_URL}img/champion/splash/${championData.id}_0.jpg`}
             alt={championData.image.full}
@@ -31,7 +27,6 @@ const ChampionDetailPage = async ({ params }: Props) => {
               objectPosition: "top",
             }}
           />
-      </Suspense>
         </div>
       <div className="mt-4 text-lg">{championData.blurb}</div>
 
