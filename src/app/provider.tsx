@@ -3,7 +3,7 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import {ReactQueryDevtools} from "@tanstack/react-query-devtools"
 import { RiMoonClearFill, RiSunFill } from "react-icons/ri";
-import modeStore from "@/store/mode";
+import modeStore from "@/store/darkMode";
 import { useEffect } from "react";
 
 const Provider = ({ children }: { children: React.ReactNode }) => {
