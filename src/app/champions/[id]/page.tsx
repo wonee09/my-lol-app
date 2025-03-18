@@ -1,5 +1,5 @@
 import DetailStatsComp from "@/components/detailStatsComp";
-import Loading from "@/components/Loading";
+import Loading from "@/app/loading";
 import { DDRAGON_URL } from "@/constant/fetchURL";
 import { fetchChampionDetail } from "@/utils/serverApi";
 import Image from "next/image";
@@ -19,8 +19,8 @@ const ChampionDetailPage = async ({ params }: Props) => {
     <div className="flex flex-col gap-2 mx-4">
       <h2 className="text-4xl font-bold">{championData.name}</h2>
       <h3 className="text-xl">{championData.title}</h3>
-      <div className="bg-neutral-500 h-96 relative">
-        <Suspense fallback={<Loading />}>
+        <div className="bg-neutral-500 h-96 relative">
+      <Suspense fallback={<Loading />}>
           <Image
             src={`${DDRAGON_URL}img/champion/splash/${championData.id}_0.jpg`}
             alt={championData.image.full}
@@ -31,8 +31,8 @@ const ChampionDetailPage = async ({ params }: Props) => {
               objectPosition: "top",
             }}
           />
-        </Suspense>
-      </div>
+      </Suspense>
+        </div>
       <div className="mt-4 text-lg">{championData.blurb}</div>
 
       <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] mt-4 md:grid-cols-2 gap-8">

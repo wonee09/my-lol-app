@@ -5,7 +5,7 @@ import {  CHAMPION, ITEMLIST, ROTATION } from "@/constant/routePath";
 
 export default function Home() {
   return (
-    <div className="mx-4 items-center">
+    <div className="mx-4 items-center static">
       <Image
         src={bg}
         alt="background image"
