@@ -26,6 +26,12 @@ const config: Config = {
         chosun: ["var(--font-chosun)"],
       },
     },
+    screens: {
+      sm: "640px",
+      md: "768",
+      lg: "1024px",
+      xl: "1280px",
+    },
   },
   plugins: [],
   darkMode: "class",
