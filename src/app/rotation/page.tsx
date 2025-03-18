@@ -4,9 +4,10 @@ import ChampionComponent from "@/components/championComp";
 import { useChampionRotations } from "@/hooks/championQueries";
 import { getVersion } from "@/utils/serverApi";
 import { useEffect, useState } from "react";
+import Loading from "@/app/loading";
 
 function RotationPage() {
-  const { data: championRotationList, isError } = useChampionRotations();
+  const { data: championRotationList, isError, isLoading } = useChampionRotations();
 
   const [ver, setVer] = useState<string>("");
   useEffect(() => {
@@ -17,16 +18,17 @@ function RotationPage() {
     fetchVersion();
   }, []);
 
-  // if (isPending) {
-  //   return <div>Loading...</div>;
-  // }
+
+  if(isLoading){
+    return <Loading />
+  }
 
   if (isError) {
-    return <div>Error...</div>;
+    return <div>Data Error...</div>;
   }
 
   return (
-    <div className="mx-4">
+    <div className="mx-4 py-24">
       <h2 className="text-2xl text-center pb-6">금주의 무료 챔피언</h2>
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
         {championRotationList?.map((champ) => {
