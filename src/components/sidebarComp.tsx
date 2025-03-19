@@ -6,7 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import logo from "@public/assets/logo.svg";
 import { RiCloseLargeFill } from "react-icons/ri";
-
+//
 const SidebarComp = () => {
   const { isMenuOpen, setIsMenuOpenToggle } = useMenuToggle();
 
