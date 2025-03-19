@@ -18,7 +18,7 @@ export default function Home() {
         }}
       />
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
         <MainCardComp
           link={CHAMPION}
           desc="리그오브레전드의 챔피언들을 만나보세요."
