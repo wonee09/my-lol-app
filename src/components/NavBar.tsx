@@ -6,7 +6,7 @@ import { HOME, CHAMPION, ITEMLIST, ROTATION } from "@/constant/routePath";
 import logo from "@public/assets/logo.svg";
 import { HiMiniBars3 } from "react-icons/hi2";
 import { useMenuToggle } from "@/store/menuOpenStore";
-import SidebarComp from "@/components/SidebarComp";
+import SidebarComp from "@/components/SidebarComp"
 
 const NavBar = () => {
   const setIsMenuOpenToggle = useMenuToggle(

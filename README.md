@@ -1,36 +1,21 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# My LoL Page
 
-## Getting Started
+프로젝트 이름 / 프로젝트에 관한 단순한 설명
 
-First, run the development server:
+## ✨ 프로젝트 소개
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+-   작업기간 : 프로젝트 작업기간
+-   사용한 프로그램이나 기술적인 소개 (jwt인증 api연결, protected router 처리 등)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🖥️ 사이트 소개
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+-   배포사이트 : 배포사이트 주소와 버셀링크  
+    가능하다면 사이트 동작을 녹화한걸 gif로 만들어서 처리  
+    (gif는 한개의 파일이 10mb를 넘길 수 없기 때문에 용량을 고려해야함)  
+    동영상 녹화는 cmd+shift+5로 하고, 영상 변환 및 용량 처리는 [iloveimg](https://www.iloveimg.com/ko)에서 처리
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🛠️ 주요기능 및 구조
 
-## Learn More
+-   앱에서 구현된 기능에 대한 설명 (로그인, 프로필 수정, 결과 저장 등의 내용)
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### 폴더구조

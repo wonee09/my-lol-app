@@ -1,7 +1,7 @@
 import bg from "@public/assets/StarGuardian19_Celebration_BG.png";
 import Image from "next/image";
 import { CHAMPION, ITEMLIST, ROTATION } from "@/constant/routePath";
-import MainCardComp from "@/components/MainCardComp";
+import MainCardComp from "@/components/MainCardComp"
 
 export default function Home() {
   return (

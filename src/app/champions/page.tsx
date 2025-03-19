@@ -1,4 +1,4 @@
-import ChampionComponent from "@/components/ChampionComp";
+import ChampionComponent from "@/components/ChampionComp"
 import { fetchChampionList } from "@/utils/serverApi";
 import { getVersion } from "@/utils/serverApi";
 
