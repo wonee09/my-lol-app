@@ -1,13 +1,17 @@
 "use client";
 
-import ChampionComponent from "@/components/championComp";
+import ChampionComponent from "@/components/ChampionComp";
 import { useChampionRotations } from "@/hooks/championQueries";
 import { getVersion } from "@/utils/serverApi";
 import { useEffect, useState } from "react";
 import Loading from "@/app/loading";
 
 function RotationPage() {
-  const { data: championRotationList, isError, isLoading } = useChampionRotations();
+  const {
+    data: championRotationList,
+    isError,
+    isLoading,
+  } = useChampionRotations();
 
   const [ver, setVer] = useState<string>("");
   useEffect(() => {
@@ -18,9 +22,8 @@ function RotationPage() {
     fetchVersion();
   }, []);
 
-
-  if(isLoading){
-    return <Loading />
+  if (isLoading) {
+    return <Loading />;
   }
 
   if (isError) {

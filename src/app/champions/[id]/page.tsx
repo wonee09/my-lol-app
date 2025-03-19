@@ -1,4 +1,4 @@
-import DetailStatsComp from "@/components/detailStatsComp";
+import DetailStatsComp from "@/components/DetailStatsComp";
 import { DDRAGON_URL } from "@/constant/fetchURL";
 import { fetchChampionDetail } from "@/utils/serverApi";
 import Image from "next/image";

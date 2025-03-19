@@ -6,15 +6,18 @@ import { HOME, CHAMPION, ITEMLIST, ROTATION } from "@/constant/routePath";
 import logo from "@public/assets/logo.svg";
 import { HiMiniBars3 } from "react-icons/hi2";
 import { useMenuToggle } from "@/store/menuOpenStore";
-import SidebarComp from "./sidebarComp";
+import SidebarComp from "./SidebarComp";
 
 const NavBar = () => {
-  const { isMenuOpen, setIsMenuOpenToggle } = useMenuToggle();
+  const setIsMenuOpenToggle = useMenuToggle(
+    (state) => state.setIsMenuOpenToggle
+  );
 
-  console.log("토글상태", isMenuOpen);
+  // console.log("토글상태", isMenuOpen);
 
   return (
-    <div><SidebarComp />
+    <div>
+      <SidebarComp />
       <nav className="flex items-center p-8 h-20 box-border bg-neutral-400/[0.8] dark:bg-neutral-900/[0.6] dark:text-primary-dark font-semibold text-lg z-50">
         <div className="flex items-center w-full ">
           <Link href={HOME}>
@@ -36,7 +39,6 @@ const NavBar = () => {
           <HiMiniBars3 />
         </button>
       </nav>
-      
     </div>
   );
 };

@@ -10,7 +10,7 @@ import { RiCloseLargeFill } from "react-icons/ri";
 const SidebarComp = () => {
   const { isMenuOpen, setIsMenuOpenToggle } = useMenuToggle();
 
-  console.log("토글상태", isMenuOpen);
+  // console.log("토글상태", isMenuOpen);
 
   return (
     <div>
